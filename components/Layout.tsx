@@ -1,0 +1,28 @@
+
+import React from 'react';
+import Header from './Header';
+import Footer from './Footer';
+import Sidebar from './Sidebar';
+
+interface LayoutProps {
+  children: React.ReactNode;
+  setActivePage: (page: 'home' | 'users') => void;
+  activePage: 'home' | 'users';
+}
+
+const Layout: React.FC<LayoutProps> = ({ children, setActivePage, activePage }) => {
+  return (
+    <div className="flex flex-col min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+      <Header />
+      <div className="flex flex-1">
+        <Sidebar setActivePage={setActivePage} activePage={activePage} />
+        <main className="flex-1 p-6 lg:p-8">
+          {children}
+        </main>
+      </div>
+      <Footer />
+    </div>
+  );
+};
+
+export default Layout;
