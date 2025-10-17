@@ -1,4 +1,3 @@
-
 import React, { useState, useMemo } from 'react';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { RegionProvider } from './contexts/RegionContext';

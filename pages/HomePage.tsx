@@ -1,30 +1,29 @@
-
 import React from 'react';
 
 const HomePage: React.FC = () => {
   return (
-    <div className="bg-white dark:bg-gray-800 shadow-lg rounded-xl p-8">
-      <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Welcome to the Modular React Application</h1>
-      <p className="text-gray-600 dark:text-gray-300 mb-6">
-        This application is a demonstration of architectural concepts from backend templating systems, implemented in a modern React SPA.
+    <div className="bg-theme-bg-primary shadow-lg rounded-xl p-8">
+      <h1 className="text-3xl font-bold text-theme-text-base mb-4">Selamat Datang di OneDering</h1>
+      <p className="text-theme-text-muted mb-6">
+        Aplikasi ini adalah demonstrasi konsep arsitektur dari sistem templating backend, yang diimplementasikan dalam SPA React modern.
       </p>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="p-6 bg-gray-50 dark:bg-gray-700 rounded-lg">
-          <h2 className="text-xl font-semibold mb-2 text-primary-600 dark:text-primary-400">Layout & Partials</h2>
-          <p>The entire UI is structured using a main `Layout` component which includes reusable "partials" like the Header, Sidebar, and Footer.</p>
+        <div className="p-6 bg-theme-bg-tertiary rounded-lg">
+          <h2 className="text-xl font-semibold mb-2 text-theme-primary">Tata Letak & Parsial</h2>
+          <p>Seluruh UI disusun menggunakan komponen `Layout` utama yang mencakup "parsial" yang dapat digunakan kembali seperti Header, Sidebar, dan Footer.</p>
         </div>
-        <div className="p-6 bg-gray-50 dark:bg-gray-700 rounded-lg">
-          <h2 className="text-xl font-semibold mb-2 text-primary-600 dark:text-primary-400">Theme System</h2>
-          <p>You can switch between light and dark themes using the icon in the header. This is managed by a `ThemeContext` and implemented with Tailwind CSS.</p>
+        <div className="p-6 bg-theme-bg-tertiary rounded-lg">
+          <h2 className="text-xl font-semibold mb-2 text-theme-primary">Sistem Tema</h2>
+          <p>Anda dapat beralih antara tema terang dan gelap menggunakan ikon di header. Ini dikelola oleh `ThemeContext` dan diimplementasikan dengan Tailwind CSS.</p>
         </div>
-        <div className="p-6 bg-gray-50 dark:bg-gray-700 rounded-lg">
-          <h2 className="text-xl font-semibold mb-2 text-primary-600 dark:text-primary-400">Area/Region System</h2>
-          <p>The sidebar contains a dynamic "Region". Components can register themselves into this area, simulating a plugin system. See the "Sample Plugin Widget" example.</p>
+        <div className="p-6 bg-theme-bg-tertiary rounded-lg">
+          <h2 className="text-xl font-semibold mb-2 text-theme-primary">Sistem Area/Region</h2>
+          <p>Sidebar berisi "Region" yang dinamis. Komponen dapat mendaftarkan diri ke area ini, mensimulasikan sistem plugin. Lihat contoh "Sample Plugin Widget".</p>
         </div>
-        <div className="p-6 bg-gray-50 dark:bg-gray-700 rounded-lg">
-          <h2 className="text-xl font-semibold mb-2 text-primary-600 dark:text-primary-400">Client-Side Exports</h2>
-          <p>Navigate to the "User Management" page to see a table of data that can be exported to CSV or JSON directly from the browser.</p>
+        <div className="p-6 bg-theme-bg-tertiary rounded-lg">
+          <h2 className="text-xl font-semibold mb-2 text-theme-primary">Ekspor Sisi Klien</h2>
+          <p>Navigasi ke halaman "Manajemen Pengguna" untuk melihat tabel data yang dapat diekspor ke CSV atau JSON langsung dari browser.</p>
         </div>
       </div>
     </div>

@@ -19,8 +19,8 @@ const NavLink: React.FC<{
         aria-label={String(children)}
         className={`w-full flex items-center px-4 py-3 text-left font-medium transition-colors duration-200 rounded-lg ${isMinimized ? 'justify-center' : ''} ${
             isActive
-                ? 'bg-primary-500 text-white'
-                : 'text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
+                ? 'bg-theme-primary text-theme-text-inverted'
+                : 'text-theme-text-base hover:bg-theme-bg-tertiary'
         }`}
     >
         <span className={!isMinimized ? "mr-3" : ""}>{icon}</span>
@@ -42,7 +42,7 @@ const UsersIcon = () => (
 
 const Sidebar: React.FC<SidebarProps> = ({ setActivePage, activePage, isSidebarMinimized }) => {
   return (
-    <aside className={`flex flex-col flex-shrink-0 bg-white dark:bg-gray-800 p-4 shadow-lg transition-all duration-300 ease-in-out ${isSidebarMinimized ? 'w-20' : 'w-64'}`}>
+    <aside className={`flex flex-col flex-shrink-0 bg-theme-bg-primary p-4 shadow-lg transition-all duration-300 ease-in-out ${isSidebarMinimized ? 'w-20' : 'w-64'}`}>
       <div className="flex-1">
         <nav>
           <ul className="space-y-2">
@@ -58,8 +58,8 @@ const Sidebar: React.FC<SidebarProps> = ({ setActivePage, activePage, isSidebarM
             </li>
           </ul>
         </nav>
-        <div className={`border-t border-gray-200 dark:border-gray-700 pt-6 mt-6 ${isSidebarMinimized ? 'space-y-2' : 'space-y-6'}`}>
-          <h3 className={`px-4 text-xs font-semibold text-gray-500 uppercase tracking-wider ${isSidebarMinimized ? 'sr-only' : 'block'}`}>Plugins</h3>
+        <div className={`border-t border-theme-border pt-6 mt-6 ${isSidebarMinimized ? 'space-y-2' : 'space-y-6'}`}>
+          <h3 className={`px-4 text-xs font-semibold text-theme-text-muted uppercase tracking-wider ${isSidebarMinimized ? 'sr-only' : 'block'}`}>Plugins</h3>
           <div className="mt-2 space-y-2">
             <Region name="sidebar" isSidebarMinimized={isSidebarMinimized} />
           </div>

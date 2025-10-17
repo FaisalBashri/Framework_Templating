@@ -1,4 +1,3 @@
-
 import React, { createContext, useState, useCallback } from 'react';
 import { RegionComponent } from '../types';
 

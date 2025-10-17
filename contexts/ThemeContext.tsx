@@ -1,4 +1,3 @@
-
 import React, { createContext, useState, useEffect, useMemo } from 'react';
 import { Theme } from '../types';
 
@@ -14,19 +13,32 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
   useEffect(() => {
     const root = window.document.documentElement;
-    const isDark = theme === Theme.Dark;
     
-    root.classList.remove(isDark ? Theme.Light : Theme.Dark);
+    // Clean up all possible theme classes
+    root.classList.remove(Theme.Light, Theme.Dark, Theme.Elegant);
+    // Add the current theme class
     root.classList.add(theme);
 
-    // Also set a background color on the body for better theme transition
-    document.body.style.backgroundColor = isDark ? '#111827' : '#f9fafb';
+    // Set body background color for the area outside the main layout
+    let bgColor = '';
+    if (theme === Theme.Light) {
+        bgColor = '#f9fafb'; // Corresponds to tailwind gray-50
+    } else if (theme === Theme.Dark) {
+        bgColor = '#111827'; // Corresponds to tailwind gray-900
+    } else { // Elegant theme
+        bgColor = '#3D2C2E'; // Rich Espresso
+    }
+    document.body.style.backgroundColor = bgColor;
     document.body.className = 'transition-colors duration-300';
     
   }, [theme]);
 
   const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === Theme.Light ? Theme.Dark : Theme.Light));
+    setTheme((prevTheme) => {
+      if (prevTheme === Theme.Light) return Theme.Dark;
+      if (prevTheme === Theme.Dark) return Theme.Elegant;
+      return Theme.Light; // Cycle from Elegant back to Light
+    });
   };
   
   const value = useMemo(() => ({ theme, toggleTheme }), [theme]);

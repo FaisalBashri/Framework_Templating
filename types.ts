@@ -1,9 +1,9 @@
-
 import React from 'react';
 
 export enum Theme {
   Light = 'light',
   Dark = 'dark',
+  Elegant = 'elegant',
 }
 
 export interface User {

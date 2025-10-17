@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import UsersTable from '../components/UsersTable';
 import { getMockUsers } from '../services/dataService';
@@ -27,14 +26,14 @@ const UsersPage: React.FC = () => {
   if (loading) {
     return (
         <div className="flex justify-center items-center h-64">
-            <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-primary-500"></div>
+            <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-theme-primary"></div>
         </div>
     )
   }
 
   return (
     <div>
-      <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">User Management</h1>
+      <h1 className="text-3xl font-bold text-theme-text-base mb-6">User Management</h1>
       <UsersTable users={users} />
     </div>
   );

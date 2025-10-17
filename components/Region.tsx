@@ -12,7 +12,7 @@ const Region: React.FC<RegionProps> = ({ name, ...rest }) => {
 
   if (componentsToRender.length === 0) {
     return (
-        <div className="px-4 py-2 text-sm text-gray-400 dark:text-gray-500">
+        <div className="px-4 py-2 text-sm text-theme-text-muted">
             No components registered.
         </div>
     );

@@ -17,7 +17,7 @@ const Layout: React.FC<LayoutProps> = ({ children, setActivePage, activePage }) 
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+    <div className="flex flex-col min-h-screen bg-theme-bg-secondary text-theme-text-base">
       <Header 
         toggleSidebar={toggleSidebar}
       />

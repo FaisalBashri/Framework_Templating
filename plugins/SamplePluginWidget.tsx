@@ -8,19 +8,19 @@ interface WidgetContentProps {
 const WidgetContent: React.FC<WidgetContentProps> = ({ isSidebarMinimized }) => {
     return (
         <div className={`
-            flex items-center p-3 bg-primary-50 dark:bg-primary-900/20 
-            rounded-lg border border-primary-200 dark:border-primary-500/30 
+            flex items-center p-3 bg-theme-primary/10
+            rounded-lg border border-theme-primary/30
             transition-all duration-300 ease-in-out
             ${isSidebarMinimized ? 'justify-center' : ''}
         `}>
-            <div className="p-2 bg-primary-100 dark:bg-primary-500/30 rounded-full flex-shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-primary-600 dark:text-primary-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div className="p-2 bg-theme-primary/20 rounded-full flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-theme-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.293 2.293a1 1 0 010 1.414L11 12l4.293 4.293a1 1 0 01-1.414 1.414L10 13.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 12 4.293 7.707a1 1 0 011.414-1.414L10 10.586 14.293 6.293a1 1 0 011.414 0L17 7.586" />
                 </svg>
             </div>
             <div className={isSidebarMinimized ? 'sr-only' : 'inline ml-3'}>
-                <h4 className="text-sm font-semibold text-gray-800 dark:text-gray-100">Sample Plugin</h4>
-                <p className="text-xs text-gray-500 dark:text-gray-400">This widget was dynamically loaded.</p>
+                <h4 className="text-sm font-semibold text-theme-text-base">Sample Plugin</h4>
+                <p className="text-xs text-theme-text-muted">This widget was dynamically loaded.</p>
             </div>
         </div>
     )
