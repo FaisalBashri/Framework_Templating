@@ -1,12 +1,12 @@
-
 import React from 'react';
 import { useRegions } from '../hooks/useRegions';
 
 interface RegionProps {
   name: string;
+  [key: string]: any;
 }
 
-const Region: React.FC<RegionProps> = ({ name }) => {
+const Region: React.FC<RegionProps> = ({ name, ...rest }) => {
   const { regions } = useRegions();
   const componentsToRender = regions[name] || [];
 
@@ -21,7 +21,7 @@ const Region: React.FC<RegionProps> = ({ name }) => {
   return (
     <>
       {componentsToRender.map(({ id, component: Component }) => (
-        <Component key={id} />
+        <Component key={id} {...rest} />
       ))}
     </>
   );
