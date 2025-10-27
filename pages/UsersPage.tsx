@@ -2,7 +2,6 @@ import React, { useEffect, useState, useMemo } from 'react';
 import { ProductGrid, ProductFilters } from '../components/UsersTable';
 import { getMockProducts } from '../services/dataService';
 import { Product } from '../types';
-import { exportToCsv, exportToJson } from '../services/exportService';
 
 interface ProductsPageProps {
   onProductSelect: (product: Product) => void;
@@ -52,14 +51,6 @@ const ProductsPage: React.FC<ProductsPageProps> = ({ onProductSelect }) => {
     return result;
   }, [products, filters, sort]);
 
-  const handleCsvExport = () => {
-    exportToCsv('products.csv', filteredAndSortedProducts);
-  };
-
-  const handleJsonExport = () => {
-    exportToJson('products.json', filteredAndSortedProducts);
-  };
-
   if (loading) {
     return (
         <div className="flex justify-center items-center h-64">
@@ -82,10 +73,6 @@ const ProductsPage: React.FC<ProductsPageProps> = ({ onProductSelect }) => {
               <option value="price-asc">Price: Low to High</option>
               <option value="price-desc">Price: High to Low</option>
             </select>
-            <div className="flex space-x-2">
-              <button onClick={handleCsvExport} className="px-4 py-2 text-sm font-medium text-white bg-theme-primary hover:bg-theme-primary-hover rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-theme-primary">Export CSV</button>
-              <button onClick={handleJsonExport} className="px-4 py-2 text-sm font-medium text-theme-text-base bg-theme-bg-tertiary hover:opacity-90 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-theme-primary">Export JSON</button>
-            </div>
           </div>
         </div>
         <ProductGrid products={filteredAndSortedProducts} onProductSelect={onProductSelect} />
