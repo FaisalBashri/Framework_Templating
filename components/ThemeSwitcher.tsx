@@ -14,12 +14,11 @@ const MoonIcon = () => (
     </svg>
 );
 
-const DollarIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8V6m0 12v-2" />
-  </svg>
+const UrbanIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0v-4m6 4v-4m6 4v-4m-9-4h5M3 7h18" />
+    </svg>
 );
-
 
 const ThemeSwitcher: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
@@ -27,11 +26,11 @@ const ThemeSwitcher: React.FC = () => {
   const renderIcon = () => {
     switch (theme) {
       case Theme.Light:
-        return <MoonIcon />;
+        return <MoonIcon />; // Switch to Dark
       case Theme.Dark:
-        return <SunIcon />;
-      case Theme.Elegant:
-        return <DollarIcon />;
+        return <UrbanIcon />; // Switch to Urban
+      case Theme.Urban:
+        return <SunIcon />; // Switch to Light
       default:
         return null;
     }
@@ -41,6 +40,7 @@ const ThemeSwitcher: React.FC = () => {
     <button
       onClick={toggleTheme}
       className="p-2 rounded-full text-theme-text-muted hover:bg-theme-bg-tertiary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-theme-primary"
+      aria-label="Toggle theme"
     >
       {renderIcon()}
     </button>

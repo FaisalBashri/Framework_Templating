@@ -15,7 +15,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const root = window.document.documentElement;
     
     // Clean up all possible theme classes
-    root.classList.remove(Theme.Light, Theme.Dark, Theme.Elegant);
+    root.classList.remove(Theme.Light, Theme.Dark, Theme.Urban);
     // Add the current theme class
     root.classList.add(theme);
 
@@ -25,8 +25,8 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         bgColor = '#f9fafb'; // Corresponds to tailwind gray-50
     } else if (theme === Theme.Dark) {
         bgColor = '#111827'; // Corresponds to tailwind gray-900
-    } else { // Elegant theme
-        bgColor = '#3D2C2E'; // Rich Espresso
+    } else { // Urban theme
+        bgColor = '#111111'; // Corresponds to theme urban bg-secondary
     }
     document.body.style.backgroundColor = bgColor;
     document.body.className = 'transition-colors duration-300';
@@ -36,8 +36,8 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   const toggleTheme = () => {
     setTheme((prevTheme) => {
       if (prevTheme === Theme.Light) return Theme.Dark;
-      if (prevTheme === Theme.Dark) return Theme.Elegant;
-      return Theme.Light; // Cycle from Elegant back to Light
+      if (prevTheme === Theme.Dark) return Theme.Urban;
+      return Theme.Light; // Cycle from Urban back to Light
     });
   };
   

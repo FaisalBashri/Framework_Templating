@@ -15,21 +15,21 @@ const WidgetContent: React.FC<WidgetContentProps> = ({ isSidebarMinimized }) => 
         `}>
             <div className="p-2 bg-theme-primary/20 rounded-full flex-shrink-0">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-theme-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.293 2.293a1 1 0 010 1.414L11 12l4.293 4.293a1 1 0 01-1.414 1.414L10 13.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 12 4.293 7.707a1 1 0 011.414-1.414L10 10.586 14.293 6.293a1 1 0 011.414 0L17 7.586" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
                 </svg>
             </div>
             <div className={isSidebarMinimized ? 'sr-only' : 'inline ml-3'}>
-                <h4 className="text-sm font-semibold text-theme-text-base">Sample Plugin</h4>
-                <p className="text-xs text-theme-text-muted">This widget was dynamically loaded.</p>
+                <h4 className="text-sm font-semibold text-theme-text-base">Free Shipping!</h4>
+                <p className="text-xs text-theme-text-muted">On all orders over $75.</p>
             </div>
         </div>
     )
 }
 
 
-const SamplePluginWidget: React.FC = () => {
+const PromotionsWidget: React.FC = () => {
   const { registerComponent, unregisterComponent } = useRegions();
-  const componentId = 'sample-plugin-widget';
+  const componentId = 'promotions-widget';
   const regionName = 'sidebar';
 
   useEffect(() => {
@@ -47,4 +47,4 @@ const SamplePluginWidget: React.FC = () => {
   return null;
 };
 
-export default SamplePluginWidget;
+export default PromotionsWidget;

@@ -3,15 +3,21 @@ import React from 'react';
 export enum Theme {
   Light = 'light',
   Dark = 'dark',
-  Elegant = 'elegant',
+  Urban = 'urban',
 }
 
-export interface User {
+export interface Product {
   id: number;
   name: string;
-  email: string;
-  role: 'Admin' | 'User' | 'Editor';
-  lastLogin: string;
+  brand: string;
+  price: number;
+  sizes: number[];
+  image: string;
+  description: string;
+}
+
+export interface CartItem extends Product {
+  quantity: number;
 }
 
 export interface RegionComponent {

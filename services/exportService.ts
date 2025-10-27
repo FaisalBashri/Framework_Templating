@@ -1,4 +1,3 @@
-
 const downloadFile = (filename: string, content: string, mimeType: string) => {
   const blob = new Blob([content], { type: mimeType });
   const link = document.createElement('a');
@@ -32,4 +31,11 @@ export const exportToCsv = <T extends object,>(filename: string, data: T[]) => {
 export const exportToJson = <T extends object,>(filename: string, data: T[]) => {
   const jsonContent = JSON.stringify(data, null, 2);
   downloadFile(filename, jsonContent, 'application/json;charset=utf-8;');
+};
+
+export const formatCurrency = (amount: number) => {
+    return new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+    }).format(amount);
 };

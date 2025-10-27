@@ -29,16 +29,16 @@
         --color-primary: 59 130 246; /* blue-500 */
         --color-primary-hover: 96 165 250; /* blue-400 */
       }
-      .elegant {
-        --color-bg-primary: 245 240 230; /* #F5F0E6 Warm Beige */
-        --color-bg-secondary: 61 44 46;   /* #3D2C2E Rich Espresso */
-        --color-bg-tertiary: 235 229 217; /* Lighter Beige for hover/secondary */
-        --color-border: 212 185 148;     /* Lighter Gold */
-        --color-text-base: 74 63 53;      /* #4A3F35 Dark Chocolate */
-        --color-text-muted: 193 165 123;   /* #C1A57B Muted Gold */
-        --color-text-inverted: 245 240 230; /* beige */
-        --color-primary: 193 165 123;     /* #C1A57B Muted Gold */
-        --color-primary-hover: 173 149 111;/* Darker Gold */
+      .urban {
+        --color-bg-primary: 248 248 248; /* #F8F8F8 */
+        --color-bg-secondary: 17 17 17;   /* #111111 */
+        --color-bg-tertiary: 234 234 234; /* #EAEAEA */
+        --color-border: 221 221 221;     /* #DDDDDD */
+        --color-text-base: 17 17 17;      /* #111111 */
+        --color-text-muted: 85 85 85;   /* #555555 */
+        --color-text-inverted: 255 255 255; /* #FFFFFF */
+        --color-primary: 255 69 0;     /* #FF4500 orange-red */
+        --color-primary-hover: 224 62 0;/* Darker orange */
       }
     </style>
     <script>
@@ -69,12 +69,19 @@
   "imports": {
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
     "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "react": "https://aistudiocdn.com/react@^19.2.0"
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "vite": "https://aistudiocdn.com/vite@^7.1.11",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.0.4",
+    "path": "https://aistudiocdn.com/path@^0.12.7",
+    "process": "https://aistudiocdn.com/process@^0.11.10",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.27.0"
   }
 }
 </script>
+<link rel="stylesheet" href="/index.css">
 </head>
   <body>
     <div id="root"></div>
-  </body>
+  <script type="module" src="/index.tsx"></script>
+</body>
 </html>
